@@ -24,6 +24,7 @@ public class Loaders {
     @Transactional
     public void loadAll(){
         elasticsearchOperations.putMapping(Posts.class);
+        postsSearchRepository.deleteAll();
         postsSearchRepository.saveAll(postsRepository.findAll());
     }
 }

@@ -221,7 +221,7 @@ class AnswerCard extends React.Component {
                         <div
                           onClick={this.questionClickedShowAnswers}
                           color="white"
-                          style={{ whiteSpace: "pre-wrap" }}
+                          style={{ whiteSpace: "pre-wrap" ,textDecorationColor: "white"}}
                           dangerouslySetInnerHTML={{ __html: this.props.body }}
                         />
                       </Card.Subtitle>

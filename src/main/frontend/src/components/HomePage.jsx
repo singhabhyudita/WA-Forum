@@ -179,22 +179,26 @@ class HomePage extends React.Component {
                 />
               </Form.Group>
             </Container>
-            {this.state.questions._embedded.postses.map((question) => (
-              <QuestionCard
-                id={question.id}
-                body={question.body}
-                ownerUserId={question.ownerUserId}
-                ownerDisplayName={question.ownerDisplayName}
-                upvoteCount={question.upvoteCount}
-                creationDate={question.creationDate}
-                tags={question.tags}
-                onAllAnswer={false}
-                links={question._links}
-                currentHasVoted={question.currentHasVoted}
-                previousPageLink={this.state.questions._links.self.href}
-                history={this.props.history}
-              />
-            ))}
+            {this.state.questions._embedded !== undefined ? (
+              this.state.questions._embedded.postses.map((question) => (
+                <QuestionCard
+                  id={question.id}
+                  body={question.body}
+                  ownerUserId={question.ownerUserId}
+                  ownerDisplayName={question.ownerDisplayName}
+                  upvoteCount={question.upvoteCount}
+                  creationDate={question.creationDate}
+                  tags={question.tags}
+                  onAllAnswer={false}
+                  links={question._links}
+                  currentHasVoted={question.currentHasVoted}
+                  previousPageLink={this.state.questions._links.self.href}
+                  history={this.props.history}
+                />
+              ))
+            ) : (
+              <h1>There are no questions yet</h1>
+            )}
           </Col>
           <Col style={{ margin: "0px" }}>
             {/* <button

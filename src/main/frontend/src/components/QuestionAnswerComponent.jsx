@@ -33,8 +33,8 @@ class QuestionAnswerComponent extends React.Component {
                 whiteSpace: "pre-wrap",
                 textAlight: "left",
               }}
+              dangerouslySetInnerHTML={{ __html: this.props.question }}
             >
-              {this.props.question}
             </Card.Title>
             <hr />
             <Card.Text
@@ -44,8 +44,8 @@ class QuestionAnswerComponent extends React.Component {
                 whiteSpace: "pre-wrap",
                 textAlign: "left",
               }}
+              dangerouslySetInnerHTML={{ __html: this.props.answer }}
             >
-              {this.props.answer}
             </Card.Text>
           </Card.Body>
         </Card>

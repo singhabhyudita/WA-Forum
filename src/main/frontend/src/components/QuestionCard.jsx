@@ -171,7 +171,7 @@ class QuestionCard extends React.Component {
                                 : this.questionClickedShowAnswers
                             }
                             color="white"
-                            style={{ whiteSpace: "pre-wrap" }}
+                            style={{ whiteSpace: "pre-wrap" ,textDecorationColor: "white"}}
                             dangerouslySetInnerHTML={{
                               __html: this.props.body,
                             }}
